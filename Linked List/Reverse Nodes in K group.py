@@ -30,7 +30,7 @@ class Solution:
             head.next=self.reverseKGroupH(temp,k,length-k)
         return prev
 
-
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         length=self.lengthOfLinkedList(head)
+        return self.reverseKGroupH(head,k,length)
         return self.reverseKGroupH(head,k,length)
