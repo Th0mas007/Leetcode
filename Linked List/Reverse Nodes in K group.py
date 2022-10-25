@@ -16,7 +16,7 @@ class Solution:
             length+=1
         return length
 
-    def reverseKGroup(self,head,k,length):
+    def reverseKGroupH(self,head,k,length):
         if length<k:
             return head
         count,temp,prev,curr=0,None,None,head
@@ -27,11 +27,8 @@ class Solution:
             curr=temp
             count+=1
         if temp is not None:
-            head.next=self.reverseKGroup(temp,k,length-k)
+            head.next=self.reverseKGroupH(temp,k,length-k)
         return prev
-
-
-
 
 
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
