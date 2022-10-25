@@ -19,18 +19,18 @@ class Solution:
     def reverseKGroupH(self,head,k,length):
         if length<k:
             return head
-        count,temp,prev,curr=0,None,None,head
+        count,nex,prev,curr=0,None,None,head
         while count<k and curr is not None:
-            temp=curr.next
+            nex=curr.next
             curr.next=prev
             prev=curr
-            curr=temp
+            curr=nex
             count+=1
-        if temp is not None:
-            head.next=self.reverseKGroupH(temp,k,length-k)
+        if nex is not None:
+            head.next=self.reverseKGroupH(nex,k,length-k)
         return prev
+
 
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         length=self.lengthOfLinkedList(head)
-        return self.reverseKGroupH(head,k,length)
         return self.reverseKGroupH(head,k,length)
